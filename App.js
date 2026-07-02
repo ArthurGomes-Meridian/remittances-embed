@@ -1,4 +1,4 @@
-import Constants from 'expo-constants';
+import * as Linking from 'expo-linking';
 import { StatusBar } from 'expo-status-bar';
 import * as WebBrowser from 'expo-web-browser';
 import { useCallback, useEffect, useMemo, useRef } from 'react';
@@ -9,7 +9,6 @@ WebBrowser.maybeCompleteAuthSession();
 
 const REMITTANCES_BASE_URL = 'https://gcash-embed-staging.meridianapps.dev';
 // const REMITTANCES_BASE_URL = 'https://localhost:3000';
-const EXPO_PORT = 8081;
 
 // Host(s) do Action Links a interceptar. Deve casar com ACTION_LINK_BASE_URL no remittances.
 const ACTION_LINK_HOSTS = __DEV__
@@ -34,11 +33,10 @@ function isActionLinkStart(rawUrl) {
   return /\/start\/?$/.test(path);
 }
 
+// Resolves to exp://<lan-ip>:8081 in Expo Go and remittancesembed:// in a
+// standalone build (requires the "scheme" declared in app.json).
 function getReturnDeeplink() {
-  const debuggerHost =
-    Constants.expoConfig?.hostUri ?? Constants.manifest?.debuggerHost;
-  const localIp = debuggerHost ? debuggerHost.split(':')[0] : '127.0.0.1';
-  return `exp://${localIp}:${EXPO_PORT}`;
+  return Linking.createURL('');
 }
 
 function getEmbedUrl(returnDeeplink) {

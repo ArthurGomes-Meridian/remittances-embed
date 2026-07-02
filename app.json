@@ -3,6 +3,7 @@
     "name": "remittances-embed",
     "slug": "remittances-embed",
     "version": "1.0.0",
+    "scheme": "remittancesembed",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
