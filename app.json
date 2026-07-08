@@ -29,9 +29,15 @@
     ],
     "extra": {
       "eas": {
-        "projectId": "a474ba66-901f-44f9-a785-94f28761e922"
+        "projectId": "d2a90439-6942-41e2-b834-1ae80243ba85"
       }
     },
-    "owner": "arthurgomesmeridian"
+    "owner": "meridiansoftware",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/d2a90439-6942-41e2-b834-1ae80243ba85"
+    }
   }
 }

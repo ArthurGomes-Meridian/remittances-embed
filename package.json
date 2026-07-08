@@ -7,14 +7,18 @@
     "expo-constants": "~56.0.18",
     "expo-linking": "~56.0.14",
     "expo-status-bar": "~56.0.4",
+    "expo-updates": "~56.0.21",
     "expo-web-browser": "~56.0.5",
     "react": "19.2.3",
+    "react-dom": "19.2.3",
     "react-native": "0.85.3",
+    "react-native-web": "^0.21.2",
     "react-native-webview": "13.16.1"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo run:android",
+    "build:android": "eas build --platform android --profile preview",
     "ios": "expo run:ios",
     "web": "expo start --web"
   },
